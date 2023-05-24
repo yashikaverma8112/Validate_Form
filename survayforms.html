@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SURVEY FORM</title>
+    
+    <style>
+*{
+  text-align: center;
+  margin:9px 9px;
+  padding: 9px 9px;
+
+}
+h1{
+  color: white;
+  font-size:40px ;
+  font-weight: bold;
+  text-decoration: underline;
+}
+body {
+            padding: 10px 50px;
+            background-color: rgb(24, 5, 60);
+        }
+
+        .formdesign {
+            font-size: 20px;
+            background-color: grey;
+  border: 2px solid white;
+  color: black;
+  border-radius: 50px;
+        }
+
+        .formdesign input {
+            
+            padding: 12px 20px;
+            border: 1px solid blue;
+            margin: 14px;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        .formerror {
+            color: red;
+        }
+
+        .but {
+            border-radius: 9px;
+            width: 200px;
+            height: 50px;
+            font-size: 25px;
+            margin: 22px 20px;
+        }
+
+    </style>
+</head>
+
+
+
+
+<body>
+    <h1>SURVEY FORM</h1>
+    <form aciton ="engryashikaverma@gmail.com" name="myForm" onsubmit="return validateForm()" method="post">
+        <div class="formdesign" id="name">
+            <p>
+                Name: <input type="text" name="fname" required><b><span class="formerror"> </span></b>
+            </p>
+        
+<p>
+    Email: <input type="email" name="femail" required><b><span class="formerror"> </span></b>
+</p>
+       
+        
+<p>
+    Phone: <input type="phone" name="fphone" required><b><span class="formerror"></span></b>
+</p>
+     
+            
+            <p>Which course you like the most
+                <select name="role" id="role">
+                    <option value="ct">C</option>
+                    <option value="c++">C++</option>
+                    <option value="java">
+                        Java
+                    </option>
+                    <option value="js">Javascript</option>
+                  
+                </select>
+                       
+            </p>		
+      
+
+            <p>Would You recommend this course to your friend
+                <label for="recommed-1">
+                    <input type="radio"
+                    id="recommed-1"
+                    name="recommed">Yes</input>
+                </label>
+                <label for="recommed-2">
+                    <input type="radio"
+                           id="recommed-2"
+                           name="recommed">No</input>
+                        </label>
+                        <label for="recommed-3">
+                            <input type="radio"
+                           id="recommed-3"
+                           name="recommed">Maybe</input>
+                </label>
+            </p>
+  
+
+            
+                In Which Course You Are Enrolled ?  <br> <br>
+            <label for="inp-1">
+                <input type="checkbox"
+                name="inp">C</input></label>
+                <label for="inp-2">
+                    <input type="checkbox"
+                    name="inp">C++</input></label>
+                    <label for="inp-3">
+                <input type="checkbox"
+                name="inp">Java</input></label>
+                <label for="inp-5">
+                    <input type="checkbox"
+                    name="inp">Javascript</input></label>
+             
+                    </p>
+             
+
+                    <p>Comments: <textarea cols="55"
+                        name="Comment"> </textarea></p>
+                </div>
+        
+                
+                               
+        
+        <input class="but" type="submit" value="Submit">
+
+    </form>
+</body>
+
+
+
+<script>
+
+function validateForm(){
+var returnval = true;
+
+var name = document.forms['myForm']["fname"].value;
+if (name.length<5){
+
+    alert('*Length of name is too short');
+    returnval = false;
+}
+
+if (name.length == 0){
+    
+    alert("*PLEASE FILL NAME")
+    returnval = false;
+}
+
+var email = document.forms['myForm']["femail"].value;
+
+
+var phone = document.forms['myForm']["fphone"].value;
+if (phone.length != 10){
+
+    alert("*Phone number should be of 10 digits!");
+    returnval = false;
+}
+
+var password = document.forms['myForm']["fpass"].value;
+if (password.length < 6){
+
+    alert("*Password should be atleast 6 characters long!")
+    returnval = false;
+}
+
+var cpassword = document.forms['myForm']["fcpass"].value;
+if (cpassword != password){
+  
+    returnval = false;
+}
+
+return returnval;
+}
+
+
+</script>
+</html>
